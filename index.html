@@ -21,7 +21,7 @@
             <div class="hero-btns-container">
                 <div class="btns-row">
                     <button class="btn-primary">تصفح التصاميم</button>
-                    <button class="btn-primary">قائمة الأسعار</button>
+                    <button class="btn-primary" onclick="window.location.href='prices.html'">قائمة الأسعار</button>
                 </div>
                 <div class="btns-single">
                     <button class="btn-outline">اطلب تصميمك الخاص</button>
@@ -52,7 +52,6 @@
             document.getElementById('webPopup').style.display = 'none';
         }
 
-        // إغلاق القائمة عند الضغط خارجها
         window.onclick = function(event) {
             const popup = document.getElementById('webPopup');
             if (event.target == popup) {
