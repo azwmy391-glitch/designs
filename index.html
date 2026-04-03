@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر لمسة للتصاميم</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">متجر <span>لمسة</span></div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1><span class="highlight">حوّل أفكارك إلى واقع بصري</span></h1>
+            <p>نصمم لك المستقبل بألوان الإبداع وأعلى معايير الجودة الرقمية.</p>
+            
+            <div class="hero-btns-container">
+                <div class="btns-row">
+                    <button class="btn-primary">تصفح التصاميم</button>
+                    <button class="btn-primary">قائمة الأسعار</button>
+                </div>
+                <div class="btns-single">
+                    <button class="btn-outline">اطلب تصميمك الخاص</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wants-website" onclick="openPopup()">
+        هل تريد موقعاً أنت أيضاً؟
+    </div>
+
+    <div class="popup-overlay" id="webPopup">
+        <div class="popup-content">
+            <span class="close-popup" onclick="closePopup()">&times;</span>
+            <h3 style="margin-top: 0;">نصمم لك عالمك الخاص</h3>
+            <p>يمكنك طلب موقع بالشكل الذي تريده، بتصاميم جذابة تناسب مشروعك!</p>
+            <a href="https://wa.me/966578550197" target="_blank" class="btn-order-web">اطلب الآن عبر واتساب</a>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('webPopup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('webPopup').style.display = 'none';
+        }
+
+        // إغلاق القائمة عند الضغط خارجها
+        window.onclick = function(event) {
+            const popup = document.getElementById('webPopup');
+            if (event.target == popup) {
+                closePopup();
+            }
+        }
+    </script>
+    
+</body>
+</html>

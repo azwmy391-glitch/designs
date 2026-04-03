@@ -1,0 +1,259 @@
+/* الألوان المستوحاة من شعار "لمسة" */
+:root {
+    --bg-color: #FFF9F7;         /* البيج الكريمي الفاتح */
+    --primary-brown: #4A3427;    /* البني الداكن */
+    --gold-subtle: #D4B996;      /* الذهبي المطفي */
+    --accent-pink: #E8D3D1;      /* الوردي الهادئ */
+    --white: #ffffff;
+    --text-discription: #7A6A5E; /* بني فاتح للوصف */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+    color: var(--primary-brown);
+    font-family: 'Cairo', sans-serif;
+}
+
+/* --- الهيدر (Navbar) --- */
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(74, 52, 39, 0.05);
+    animation: slideDown 0.8s ease-out;
+}
+
+.logo {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--primary-brown);
+}
+
+.logo span {
+    color: var(--gold-subtle);
+}
+
+/* --- واجهة الموقع (Hero) --- */
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-family: 'Reem Kufi', sans-serif;
+    font-size: 3.8rem;
+    color: var(--primary-brown);
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-out both;
+}
+
+.highlight {
+    background: linear-gradient(to right, var(--primary-brown), var(--gold-subtle));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--text-discription);
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* --- الأزرار الرئيسية --- */
+.hero-btns-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.btns-row {
+    display: flex;
+    gap: 15px;
+}
+
+button, .btn-primary, .btn-outline, .btn-order-web {
+    font-family: 'Cairo', sans-serif;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    border: none;
+    text-decoration: none; /* للأزرار التي تستخدم وسم <a> */
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--primary-brown);
+    color: var(--bg-color);
+    box-shadow: 0 10px 20px rgba(74, 52, 39, 0.2);
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: var(--gold-subtle);
+    color: var(--primary-brown);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-brown);
+    color: var(--primary-brown);
+    min-width: 280px;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-pink);
+    border-color: var(--accent-pink);
+    transform: translateY(-5px);
+}
+
+/* --- تنسيق زر "هل تريد موقعاً؟" الجديد (بالألوان البنية) --- */
+.wants-website {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    border: 2px solid var(--primary-brown); /* بني بدلاً من الوردي */
+    padding: 4px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 90;
+    box-shadow: 0 5px 15px rgba(74, 52, 39, 0.1);
+    color: var(--primary-brown);
+    font-weight: bold;
+    font-size: 1rem;
+    white-space: nowrap;
+    animation: bounceIn 1s ease-out backwards 2s; /* نفس الأنيميشن */
+    transition: 0.3s;
+    direction: ltr; /* للحفاظ على التوسط بدقة */
+}
+
+.wants-website:hover {
+    background-color: var(--primary-brown);
+    color: var(--bg-color);
+    bottom: 20px; /* حركة ارتفاع خفيفة عند الهوفر */
+}
+
+/* --- تنسيق القائمة المنبثقة (Popup) --- */
+.popup-overlay {
+    position: fixed;
+    inset: 0; 
+    width: 100vw;
+    height: 100vh;
+    background: rgba(46, 16, 101, 0.5); /* تعتيم مائل للبنفسجي الغامق */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 350px;
+    width: 90%;
+    position: relative;
+    animation: popUpAnim 0.4s ease-out; /* نفس الأنيميشن */
+    box-shadow: 0 10px 30px rgba(74, 52, 39, 0.2);
+}
+
+.popup-content h3 {
+    color: var(--primary-brown);
+}
+
+.popup-content p {
+    color: var(--text-discription);
+    font-size: 1rem;
+    margin: 15px 0 25px;
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #aaa;
+    line-height: 1;
+}
+
+.close-popup:hover {
+    color: var(--primary-brown);
+}
+
+.btn-order-web {
+    background-color: var(--gold-subtle); /* لون ذهبي للزر بدلاً من الوردي */
+    color: var(--primary-brown);
+    width: 100%;
+}
+
+.btn-order-web:hover {
+    background-color: var(--primary-brown);
+    color: var(--bg-color);
+    transform: scale(1.03);
+}
+
+/* --- تعريف الحركات (Keyframes) --- */
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* أنيميشن bounceIn المأخوذ من الكود الأصلي */
+@keyframes bounceIn { 
+    from { opacity: 0; transform: translate(-50%, 20px) scale(0.5); } 
+    to { opacity: 1; transform: translate(-50%, 0) scale(1); } 
+}
+
+/* أنيميشن popUpAnim المأخوذ من الكود الأصلي */
+@keyframes popUpAnim { 
+    from { transform: scale(0.8); opacity: 0; } 
+    to { transform: scale(1); opacity: 1; } 
+}
+
+/* التجاوب */
+@media (max-width: 600px) {
+    .btns-row { flex-direction: column; }
+    .hero h1 { font-size: 2.5rem; }
+    .btn-outline { min-width: 100%; }
+    .wants-website { font-size: 0.9rem; padding: 6px 15px; }
+}
