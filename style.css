@@ -130,32 +130,32 @@ button, .btn-primary, .btn-outline, .btn-order-web {
     transform: translateY(-5px);
 }
 
-/* --- تنسيق زر "هل تريد موقعاً؟" الجديد (بالألوان البنية) --- */
+/* --- تنسيق زر "هل تريد موقعاً؟" الجديد --- */
 .wants-website {
     position: fixed;
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--white);
-    border: 2px solid var(--primary-brown); /* بني بدلاً من الوردي */
+    border: 2px solid var(--primary-brown);
     padding: 2px 5px;
     border-radius: 50px;
     cursor: pointer;
     z-index: 90;
-    box-shadow: 0 5px 15px rgba(74, 52, 39, 0.1);
+    box-shadow: 0 5px 15px #E8D3D1;
     color: var(--primary-brown);
     font-weight: bold;
     font-size: 1rem;
     white-space: nowrap;
-    animation: bounceIn 1s ease-out backwards 2s; /* نفس الأنيميشن */
+    animation: bounceIn 1s ease-out backwards 2s;
     transition: 0.3s;
-    direction: ltr; /* للحفاظ على التوسط بدقة */
+    direction: ltr;
 }
 
 .wants-website:hover {
     background-color: var(--primary-brown);
     color: var(--bg-color);
-    bottom: 20px; /* حركة ارتفاع خفيفة عند الهوفر */
+    bottom: 20px;
 }
 
 /* --- تنسيق القائمة المنبثقة (Popup) --- */
@@ -164,7 +164,7 @@ button, .btn-primary, .btn-outline, .btn-order-web {
     inset: 0; 
     width: 100vw;
     height: 100vh;
-    background: rgba(46, 16, 101, 0.5); /* تعتيم مائل للبنفسجي الغامق */
+    background: rgba(74, 52, 39, 0.6); /* تعديل: خلفية بنية شفافة متناسقة مع الهوية */
     display: none;
     justify-content: center;
     align-items: center;
@@ -180,7 +180,7 @@ button, .btn-primary, .btn-outline, .btn-order-web {
     max-width: 350px;
     width: 90%;
     position: relative;
-    animation: popUpAnim 0.4s ease-out; /* نفس الأنيميشن */
+    animation: popUpAnim 0.4s ease-out;
     box-shadow: 0 10px 30px rgba(74, 52, 39, 0.2);
 }
 
@@ -209,7 +209,7 @@ button, .btn-primary, .btn-outline, .btn-order-web {
 }
 
 .btn-order-web {
-    background-color: var(--gold-subtle); /* لون ذهبي للزر بدلاً من الوردي */
+    background-color: var(--gold-subtle);
     color: var(--primary-brown);
     width: 100%;
 }
@@ -220,7 +220,31 @@ button, .btn-primary, .btn-outline, .btn-order-web {
     transform: scale(1.03);
 }
 
+/* --- تنسيق مربع طرق الدفع في صفحة الأسعار --- */
+.promo-box {
+    margin-top: 30px;
+    background: var(--accent-pink);
+    color: var(--primary-brown);
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: bounceIn 1s ease-out 0.6s both, softPulse 2s infinite ease-in-out; /* إضافة أنيميشن النبض المستمر */
+    box-shadow: 0 5px 15px rgba(232, 211, 209, 0.4);
+    line-height: 1.6;
+}
+
 /* --- تعريف الحركات (Keyframes) --- */
+
+@keyframes softPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
 
 @keyframes slideDown {
     from { transform: translateY(-100%); opacity: 0; }
@@ -238,13 +262,11 @@ button, .btn-primary, .btn-outline, .btn-order-web {
     100% { transform: scale(1); }
 }
 
-/* أنيميشن bounceIn المأخوذ من الكود الأصلي */
 @keyframes bounceIn { 
     from { opacity: 0; transform: translate(-50%, 20px) scale(0.5); } 
     to { opacity: 1; transform: translate(-50%, 0) scale(1); } 
 }
 
-/* أنيميشن popUpAnim المأخوذ من الكود الأصلي */
 @keyframes popUpAnim { 
     from { transform: scale(0.8); opacity: 0; } 
     to { transform: scale(1); opacity: 1; } 
