@@ -63,6 +63,7 @@ body {
 .highlight {
     background: linear-gradient(to right, var(--primary-brown), var(--gold-subtle));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     animation: pulse 2s infinite;
