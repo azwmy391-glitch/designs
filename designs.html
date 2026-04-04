@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض التصاميم - متجر لمسة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .designs-section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .designs-header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .designs-header h1 {
+            font-family: 'Reem Kufi', sans-serif;
+            font-size: 2.8rem;
+            color: var(--primary-brown);
+            margin-bottom: 10px;
+        }
+
+        /* حاوية الصور (مثل حاوية الأسعار) */
+        .designs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            width: 100%;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* كرت الصورة الواحد */
+        .design-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid var(--accent-pink);
+            box-shadow: 0 10px 25px rgba(74, 52, 39, 0.05);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .design-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(74, 52, 39, 0.15);
+            border-color: var(--gold-subtle);
+        }
+
+        .design-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: 0.5s;
+        }
+
+        .design-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* لمسة جمالية أسفل كل صورة */
+        .design-info {
+            padding: 15px;
+            text-align: center;
+            background: var(--white);
+            border-top: 1px solid var(--bg-color);
+        }
+
+        .design-title {
+            font-weight: 700;
+            color: var(--primary-brown);
+            font-size: 1rem;
+        }
+
+        .back-home-link {
+            margin-top: 50px;
+            display: inline-block;
+            color: var(--text-discription);
+            text-decoration: none;
+            border-bottom: 1px solid var(--gold-subtle);
+            font-weight: bold;
+        }
+
+        /* أنيميشن الظهور من الأسفل */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">مَتْجَرُ <span>لَمْسَةٍ</span></div>
+    </nav>
+
+    <div class="designs-section">
+        <div class="designs-header">
+            <h1>مَعْرِضُ أَعْمَالِي</h1>
+            <p>هُنَا تَجْتَمِعُ اللَّمَسَاتُ الْفَنِّيَّةُ لِتُشَكِّلَ وَاقِعًا بَصَرِيًّا فَرِيدًا.</p>
+        </div>
+
+        <div class="designs-container">
+            <div class="design-card">
+                <img src="https://i.postimg.cc/YqJWMj1Q/56129382-7f6b-4419-9c87-10ee0a95019e.jpg">
+                <div class="design-info">
+                    <span class="design-title">تصميم كشخة العيد</span>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <img src="https://via.placeholder.com/400x500">
+                <div class="design-info">
+                    <span class="design-title">تصميم هوية بصرية</span>
+                </div>
+            </div>
+
+            <div class="design-card">
+                <img src="https://via.placeholder.com/400x500">
+                <div class="design-info">
+                    <span class="design-title">تصميم منشورات</span>
+                </div>
+            </div>
+
+            </div>
+
+        <a href="index.html" class="back-home-link">اَلْعَوْدَةُ لِلرَّئِيسِيَّةِ</a>
+    </div>
+
+</body>
+</html>
