@@ -32,7 +32,7 @@
         /* حاوية الصور (مثل حاوية الأسعار) */
         .designs-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 25px;
             width: 100%;
             animation: fadeInUp 1s ease-out 0.3s both;
@@ -47,6 +47,7 @@
             box-shadow: 0 10px 25px rgba(74, 52, 39, 0.05);
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            cursor: zoom-in; /* تغيير شكل الماوس ليدل على إمكانية التكبير */
         }
 
         .design-card:hover {
@@ -89,6 +90,38 @@
             font-weight: bold;
         }
 
+        /* --- نظام تكبير الصور المطور (Full Screen Viewer) --- */
+        .image-viewer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 3000;
+            cursor: zoom-out;
+            backdrop-filter: blur(8px);
+            animation: fadeInOverlay 0.3s ease;
+        }
+
+        .image-viewer-overlay img {
+            max-width: 90%;
+            max-height: 85%;
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+            animation: zoomInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes fadeInOverlay {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes zoomInImage {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
         /* أنيميشن الظهور من الأسفل */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
@@ -109,31 +142,55 @@
         </div>
 
         <div class="designs-container">
-            <div class="design-card">
+            <div class="design-card" onclick="showImage(this)">
                 <img src="https://i.postimg.cc/YqJWMj1Q/56129382-7f6b-4419-9c87-10ee0a95019e.jpg">
                 <div class="design-info">
                     <span class="design-title">تصميم كشخة العيد</span>
                 </div>
             </div>
 
-            <div class="design-card">
+            <div class="design-card" onclick="showImage(this)">
                 <img src="https://via.placeholder.com/400x500">
                 <div class="design-info">
                     <span class="design-title">تصميم هوية بصرية</span>
                 </div>
             </div>
 
-            <div class="design-card">
+            <div class="design-card" onclick="showImage(this)">
                 <img src="https://via.placeholder.com/400x500">
                 <div class="design-info">
                     <span class="design-title">تصميم منشورات</span>
                 </div>
             </div>
 
-            </div>
+        </div>
 
         <a href="index.html" class="back-home-link">اَلْعَوْدَةُ لِلرَّئِيسِيَّةِ</a>
     </div>
+
+    <div class="image-viewer-overlay" id="imgViewer" onclick="closeImage()">
+        <img id="fullSizeImg" src="">
+    </div>
+
+    <script>
+        function showImage(card) {
+            const source = card.querySelector('img').src;
+            const viewer = document.getElementById('imgViewer');
+            const fullImg = document.getElementById('fullSizeImg');
+            
+            fullImg.src = source;
+            viewer.style.display = 'flex';
+        }
+
+        function closeImage() {
+            document.getElementById('imgViewer').style.display = 'none';
+        }
+
+        // إغلاق عند الضغط على زر Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") closeImage();
+        });
+    </script>
 
 </body>
 </html>
