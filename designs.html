@@ -29,7 +29,6 @@
             margin-bottom: 10px;
         }
 
-        /* حاوية الصور (مثل حاوية الأسعار) */
         .designs-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -38,7 +37,6 @@
             animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        /* كرت الصورة الواحد */
         .design-card {
             background: var(--white);
             border-radius: 25px;
@@ -47,7 +45,7 @@
             box-shadow: 0 10px 25px rgba(74, 52, 39, 0.05);
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            cursor: zoom-in; /* تغيير شكل الماوس ليدل على إمكانية التكبير */
+            cursor: zoom-in;
         }
 
         .design-card:hover {
@@ -67,7 +65,6 @@
             transform: scale(1.05);
         }
 
-        /* لمسة جمالية أسفل كل صورة */
         .design-info {
             padding: 15px;
             text-align: center;
@@ -90,7 +87,6 @@
             font-weight: bold;
         }
 
-        /* --- نظام تكبير الصور المطور (Full Screen Viewer) --- */
         .image-viewer-overlay {
             position: fixed;
             inset: 0;
@@ -122,7 +118,6 @@
             to { transform: scale(1); opacity: 1; }
         }
 
-        /* أنيميشن الظهور من الأسفل */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -186,7 +181,6 @@
             document.getElementById('imgViewer').style.display = 'none';
         }
 
-        // إغلاق عند الضغط على زر Esc
         document.addEventListener('keydown', function(e) {
             if (e.key === "Escape") closeImage();
         });
