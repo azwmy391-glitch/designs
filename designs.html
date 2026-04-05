@@ -31,22 +31,22 @@
 
         .designs-container {
             display: grid;
-            /* تم تعديل minmax ليكون 140px لضمان ظهور عنصرين بجانب بعض في الجوال */
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px; /* تقليل الفجوة لتناسب المربعات الصغيرة */
+            gap: 15px;
             width: 100%;
             animation: fadeInUp 1s ease-out 0.3s both;
+            margin-bottom: 50px;
         }
 
         .design-card {
             background: var(--white);
-            border-radius: 20px; /* تقليل الحواف لتناسب الحجم الجديد */
+            border-radius: 20px;
             overflow: hidden;
             border: 2px solid var(--accent-pink);
             box-shadow: 0 10px 25px rgba(74, 52, 39, 0.05);
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            cursor: zoom-in;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
         }
@@ -57,20 +57,16 @@
             border-color: var(--gold-subtle);
         }
 
-        .design-card img {
+        .design-card img, .design-card video {
             width: 100%;
-            height: auto;
+            aspect-ratio: 9 / 16; 
             display: block;
             transition: 0.5s;
             object-fit: cover;
         }
 
-        .design-card:hover img {
-            transform: scale(1.05);
-        }
-
         .design-info {
-            padding: 10px; /* تقليل الحشو الداخلي */
+            padding: 10px;
             text-align: center;
             background: var(--white);
             border-top: 1px solid var(--bg-color);
@@ -80,18 +76,32 @@
         .design-title {
             font-weight: 700;
             color: var(--primary-brown);
-            font-size: 0.85rem; /* تصغير الخط ليتناسب مع المربعات الصغيرة */
+            font-size: 0.9rem;
         }
 
-        .back-home-link {
-            margin-top: 50px;
-            display: inline-block;
-            color: var(--text-discription);
-            text-decoration: none;
-            border-bottom: 1px solid var(--gold-subtle);
+        /* تنسيق الصفحة الداخلية للمجموعة */
+        #groupPage {
+            display: none;
+            width: 100%;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .back-btn {
+            background: var(--primary-brown);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
             font-weight: bold;
+            margin-bottom: 30px;
+            transition: 0.3s;
         }
 
+        .back-btn:hover { background: var(--accent-pink); }
+
+        /* نافذة التكبير الكبيرة */
         .image-viewer-overlay {
             position: fixed;
             inset: 0;
@@ -102,40 +112,21 @@
             z-index: 3000;
             cursor: zoom-out;
             backdrop-filter: blur(8px);
-            animation: fadeInOverlay 0.3s ease;
         }
 
-        .image-viewer-overlay img {
+        .image-viewer-overlay img, .image-viewer-overlay video {
             max-width: 90%;
             max-height: 90%;
             border-radius: 15px;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-            animation: zoomInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        @keyframes fadeInOverlay {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-        @keyframes zoomInImage {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* تعديل للشاشات الكبيرة لضمان بقاء المربعات بحجم مناسب وكبير */
         @media (min-width: 768px) {
             .designs-container {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 25px;
-            }
-            .design-title {
-                font-size: 1.1rem;
             }
         }
     </style>
@@ -146,74 +137,116 @@
         <div class="logo">مَتْجَرُ <span>لَمْسَةٍ</span></div>
     </nav>
 
-    <div class="designs-section">
+    <div id="mainGallery" class="designs-section">
         <div class="designs-header">
             <h1>مَعْرِضُ أَعْمَالِي</h1>
-            <p>هُنَا تَجْتَمِعُ اللَّمَسَاتُ الْفَنِّيَّةُ لِتُشَكِّلَ وَاقِعًا بَصَرِيًّا فَرِيدًا.</p>
+            <p>اختر القسم لتصفح التصاميم بصورة كاملة.</p>
         </div>
 
+        <div class="designs-header"><h1>تَصَامِيمُ الصُّوَرِ:</h1></div>
         <div class="designs-container">
-            <div class="design-card" onclick="showImage(this)">
-                <img src="https://i.postimg.cc/cHHK0FSL/41712b2b-2768-4c97-990d-1329bb598903.jpg">
-                <div class="design-info">
-                    <span class="design-title">تصميم كشخة المناسبات</span>
-                </div>
+            <div class="design-card" onclick="showGroup('بجايم')">
+                <img src="https://i.postimg.cc/WzJWh6v9/3487897b-4d79-4e19-9ecc-699e36acf854.jpg">
+                <div class="design-info"><span class="design-title">رسم بجايم</span></div>
             </div>
+            <div class="design-card" onclick="showGroup('عائلي')">
+                <img src="https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg">
+                <div class="design-info"><span class="design-title">رسم عائلي</span></div>
+            </div>
+            <div class="design-card" onclick="showGroup('زوجين')">
+                <img src="https://i.postimg.cc/4dJ0dhLZ/a805f4ed-585a-4e34-a150-d2d41f133759.jpg">
+                <div class="design-info"><span class="design-title">رسم زوجين</span></div>
+            </div>
+            <div class="design-card" onclick="showGroup('دعوات')">
+                <img src="https://i.postimg.cc/vH2rp6wT/528f85b4-f291-426e-8513-a13f2c26efbb.jpg">
+                <div class="design-info"><span class="design-title">رسم دعوات</span></div>
+            </div>
+            <div class="design-card" onclick="showGroup('فساتين')">
+                <img src="https://i.postimg.cc/mr0QpxMg/1292e9c0-1a2b-4b72-81fc-4d38ffda675b.jpg">
+                <div class="design-info"><span class="design-title">رسم فساتين</span></div>
+            </div>
+        </div>
 
-            <div class="design-card" onclick="showImage(this)">
-                <img src="https://i.postimg.cc/Bn0B4fwD/8cd1ebfe-5f63-4b4a-8952-c1e8792c8ee6.jpg">
-                <div class="design-info">
-                    <span class="design-title">رسم عائلي للمناسبات</span>
-                </div>
+        <div class="designs-header"><h1>تَصَامِيمُ الْفِيدْيُو:</h1></div>
+        <div class="designs-container">
+            <div class="design-card" onclick="showGroup('دعوات_فيديو')">
+                <video muted loop playsinline autoplay>
+                    <source src="رابط_فيديو_الغلاف.mp4" type="video/mp4">
+                </video>
+                <div class="design-info"><span class="design-title">تصميم دعوات الكتروني</span></div>
             </div>
-
-            <div class="design-card" onclick="showImage(this)">
-                <img src="https://i.postimg.cc/k5CK3NGW/d37eb12e-379a-4a30-8878-3091a6c0f2e3.jpg">
-                <div class="design-info">
-                    <span class="design-title">تصميم عائلي</span>
-                </div>
-            </div>
-
-            <div class="design-card" onclick="showImage(this)">
-                <img src="https://i.postimg.cc/k5CK3NGW/d37eb12e-379a-4a30-8878-3091a6c0f2e3.jpg">
-                <div class="design-info">
-                    <span class="design-title">تصميم عائلي</span>
-                </div>
-            </div>
-
-            <div class="design-card" onclick="showImage(this)">
-                <img src="https://i.postimg.cc/k5CK3NGW/d37eb12e-379a-4a30-8878-3091a6c0f2e3.jpg">
-                <div class="design-info">
-                    <span class="design-title">تصميم عائلي</span>
-                </div>
-            </div>
-         </div>
+        </div>
 
         <a href="index.html" class="back-home-link">اَلْعَوْدَةُ لِلرَّئِيسِيَّةِ</a>
     </div>
 
-    <div class="image-viewer-overlay" id="imgViewer" onclick="closeImage()">
-        <img id="fullSizeImg" src="">
+    <div id="groupPage" class="designs-section">
+        <button class="back-btn" onclick="hideGroup()">← العودة للمعرض</button>
+        <div class="designs-header">
+            <h1 id="groupTitle">اسم القسم</h1>
+        </div>
+        <div id="groupContainer" class="designs-container">
+            </div>
+    </div>
+
+    <div class="image-viewer-overlay" id="imgViewer" onclick="this.style.display='none'">
+        <div id="mediaContainer"></div>
     </div>
 
     <script>
-        function showImage(card) {
-            const source = card.querySelector('img').src;
-            const viewer = document.getElementById('imgViewer');
-            const fullImg = document.getElementById('fullSizeImg');
+        const data = {
+            'بجايم': { type: 'img', items: ['https://i.postimg.cc/WzJWh6v9/3487897b-4d79-4e19-9ecc-699e36acf854.jpg', 'https://i.postimg.cc/85dd3KTV/1a864f55-4c58-4056-a652-5db07cc2fa4e.jpg'] },
+            'عائلي': { type: 'img', items: ['https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg', 'https://i.postimg.cc/pXJ78Cjn/8589a603-a5d9-41c5-93f2-fa1dad7a4a14.jpg'] },
+            'زوجين': { type: 'img', items: ['https://i.postimg.cc/4dJ0dhLZ/a805f4ed-585a-4e34-a150-d2d41f133759.jpg', 'https://i.postimg.cc/kGB48G1W/837a31e0-e688-4596-9cee-64f100a86c86.jpg'] },
+            'دعوات': { type: 'img', items: ['https://i.postimg.cc/vH2rp6wT/528f85b4-f291-426e-8513-a13f2c26efbb.jpg', 'https://i.postimg.cc/85GMhRMr/131f4e4d-61cb-4102-b7a2-856b8089bec1.jpg'] },
+            'فساتين': { type: 'img', items: ['https://i.postimg.cc/mr0QpxMg/1292e9c0-1a2b-4b72-81fc-4d38ffda675b.jpg'] },
+            'دعوات_فيديو': { type: 'video', items: ['رابط_فيديو_1.mp4', 'رابط_فيديو_2.mp4'] }
+        };
+
+        function showGroup(category) {
+            const main = document.getElementById('mainGallery');
+            const groupPage = document.getElementById('groupPage');
+            const container = document.getElementById('groupContainer');
+            const title = document.getElementById('groupTitle');
+
+            title.innerText = category.replace('_', ' ');
+            container.innerHTML = '';
             
-            fullImg.src = source;
+            data[category].items.forEach(src => {
+                const card = document.createElement('div');
+                card.className = 'design-card';
+                card.onclick = (e) => { e.stopPropagation(); zoomMedia(src, data[category].type); };
+
+                if (data[category].type === 'img') {
+                    card.innerHTML = `<img src="${src}">`;
+                } else {
+                    card.innerHTML = `<video muted loop playsinline autoplay><source src="${src}"></video>`;
+                }
+                container.appendChild(card);
+            });
+
+            main.style.display = 'none';
+            groupPage.style.display = 'flex';
+            window.scrollTo(0, 0);
+        }
+
+        function hideGroup() {
+            document.getElementById('mainGallery').style.display = 'flex';
+            document.getElementById('groupPage').style.display = 'none';
+        }
+
+        function zoomMedia(src, type) {
+            const viewer = document.getElementById('imgViewer');
+            const container = document.getElementById('mediaContainer');
+            container.innerHTML = '';
+
+            if (type === 'img') {
+                container.innerHTML = `<img src="${src}">`;
+            } else {
+                container.innerHTML = `<video controls autoplay><source src="${src}"></video>`;
+            }
             viewer.style.display = 'flex';
         }
-
-        function closeImage() {
-            document.getElementById('imgViewer').style.display = 'none';
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") closeImage();
-        });
     </script>
-
 </body>
 </html>
