@@ -31,15 +31,16 @@
 
         .designs-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            /* تم تعديل minmax ليكون 140px لضمان ظهور عنصرين بجانب بعض في الجوال */
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px; /* تقليل الفجوة لتناسب المربعات الصغيرة */
             width: 100%;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
 
         .design-card {
             background: var(--white);
-            border-radius: 25px;
+            border-radius: 20px; /* تقليل الحواف لتناسب الحجم الجديد */
             overflow: hidden;
             border: 2px solid var(--accent-pink);
             box-shadow: 0 10px 25px rgba(74, 52, 39, 0.05);
@@ -51,7 +52,7 @@
         }
 
         .design-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(74, 52, 39, 0.15);
             border-color: var(--gold-subtle);
         }
@@ -69,7 +70,7 @@
         }
 
         .design-info {
-            padding: 15px;
+            padding: 10px; /* تقليل الحشو الداخلي */
             text-align: center;
             background: var(--white);
             border-top: 1px solid var(--bg-color);
@@ -79,7 +80,7 @@
         .design-title {
             font-weight: 700;
             color: var(--primary-brown);
-            font-size: 1.1rem;
+            font-size: 0.85rem; /* تصغير الخط ليتناسب مع المربعات الصغيرة */
         }
 
         .back-home-link {
@@ -126,6 +127,17 @@
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* تعديل للشاشات الكبيرة لضمان بقاء المربعات بحجم مناسب وكبير */
+        @media (min-width: 768px) {
+            .designs-container {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 25px;
+            }
+            .design-title {
+                font-size: 1.1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -161,7 +173,21 @@
                     <span class="design-title">تصميم عائلي</span>
                 </div>
             </div>
-        </div>
+
+            <div class="design-card" onclick="showImage(this)">
+                <img src="https://i.postimg.cc/k5CK3NGW/d37eb12e-379a-4a30-8878-3091a6c0f2e3.jpg">
+                <div class="design-info">
+                    <span class="design-title">تصميم عائلي</span>
+                </div>
+            </div>
+
+            <div class="design-card" onclick="showImage(this)">
+                <img src="https://i.postimg.cc/k5CK3NGW/d37eb12e-379a-4a30-8878-3091a6c0f2e3.jpg">
+                <div class="design-info">
+                    <span class="design-title">تصميم عائلي</span>
+                </div>
+            </div>
+         </div>
 
         <a href="index.html" class="back-home-link">اَلْعَوْدَةُ لِلرَّئِيسِيَّةِ</a>
     </div>
