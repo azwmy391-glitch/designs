@@ -106,7 +106,6 @@
             inset: 0;
             background: rgba(0, 0, 0, 0.9);
             display: none;
-            /* تم تعديل التنسيق هنا لضمان التوسط في النص */
             justify-content: center; 
             align-items: center; 
             z-index: 3000;
@@ -115,7 +114,6 @@
         }
 
         #mediaContainer {
-            /* تعديل لضمان توسط المحتوى عمودياً وأفقياً */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -127,7 +125,6 @@
             max-width: 90%;
             max-height: 90%;
             border-radius: 15px;
-            /* التأكد من عدم وجود هوامش خارجية قد تزيح المحتوى */
             margin: auto; 
             display: block;
         }
@@ -152,40 +149,70 @@
     <div id="mainGallery" class="designs-section">
         <div class="designs-header">
             <h1>مَعْرِضُ أَعْمَالِي</h1>
-            <p>اختر القسم لتصفح التصاميم بصورة كاملة.</p>
+            <p>اِخْتَرِ الْقِسْمَ لِتَصَفُّحِ التَّصَامِيمِ بِصُورَةٍ كَامِلَةٍ.</p>
         </div>
 
         <div class="designs-header"><h1>تَصَامِيمُ الصُّوَرِ:</h1></div>
         <div class="designs-container">
-            <div class="design-card" onclick="showGroup('بجايم')">
-                <img src="https://i.postimg.cc/WzJWh6v9/3487897b-4d79-4e19-9ecc-699e36acf854.jpg">
+            <div class="design-card" onclick="showGroup('بَجَايِمُ')">
+                <img src="https://i.postimg.cc/sDzD93n8/Picsart-26-04-05-11-17-55-276.jpg">
                 <div class="design-info"><span class="design-title">رسم بجايم</span></div>
             </div>
-            <div class="design-card" onclick="showGroup('عائلي')">
+            <div class="design-card" onclick="showGroup('عَائِلِيٌّ')">
                 <img src="https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg">
                 <div class="design-info"><span class="design-title">رسم عائلي</span></div>
             </div>
-            <div class="design-card" onclick="showGroup('شخصين')">
-                <img src="https://i.postimg.cc/4dJ0dhLZ/a805f4ed-585a-4e34-a150-d2d41f133759.jpg">
+            <div class="design-card" onclick="showGroup('شَخْصَيْنِ')">
+                <img src="https://i.postimg.cc/m2QqCHk0/Picsart-26-04-05-12-11-27-972.jpg">
                 <div class="design-info"><span class="design-title">رسم شخصين</span></div>
             </div>
-            <div class="design-card" onclick="showGroup('دعوات')">
-                <img src="https://i.postimg.cc/vH2rp6wT/528f85b4-f291-426e-8513-a13f2c26efbb.jpg">
+            <div class="design-card" onclick="showGroup('دَعَوَاتٌ')">
+                <img src="https://i.postimg.cc/4NL8zQZj/Picsart-26-04-05-12-36-58-295.jpg">
                 <div class="design-info"><span class="design-title">رسم دعوات</span></div>
             </div>
-            <div class="design-card" onclick="showGroup('فساتين')">
-                <img src="https://i.postimg.cc/mr0QpxMg/1292e9c0-1a2b-4b72-81fc-4d38ffda675b.jpg">
+            <div class="design-card" onclick="showGroup('فَسَاتِينُ')">
+                <img src="https://i.postimg.cc/Wz9Ft7CX/IMG-20260405-WA0034.jpg">
                 <div class="design-info"><span class="design-title">رسم فساتين</span></div>
             </div>
         </div>
 
         <div class="designs-header"><h1>تَصَامِيمُ الْفِيدْيُو:</h1></div>
         <div class="designs-container">
-            <div class="design-card" onclick="showGroup('دعوات_فيديو')">
+            <div class="design-card" onclick="zoomMedia('https://cdn.discordapp.com/attachments/1357551133358559372/1490367584535838740/WhatsApp_Video_2026-04-05_at_9.40.35_AM.mp4?ex=69d3cc79&is=69d27af9&hm=ae9b4c213c4a6d141320e63ffdbe14e468cafa5bbf556494c47005d5c2516c9d&', 'video')">
                 <video muted loop playsinline autoplay>
-                    <source src="رابط_فيديو_الغلاف.mp4" type="video/mp4">
+                    <source src="https://cdn.discordapp.com/attachments/1357551133358559372/1490367584535838740/WhatsApp_Video_2026-04-05_at_9.40.35_AM.mp4?ex=69d3cc79&is=69d27af9&hm=ae9b4c213c4a6d141320e63ffdbe14e468cafa5bbf556494c47005d5c2516c9d&" type="video/mp4">
                 </video>
-                <div class="design-info"><span class="design-title">تصميم دعوات الكتروني</span></div>
+                <div class="design-info"><span class="design-title">تصميم بشارة المواليد</span></div>
+            </div>
+            <div class="design-card" onclick="zoomMedia('https://cdn.discordapp.com/attachments/1357551133358559372/1490371522454487213/VN_.mp4?ex=69d3d024&is=69d27ea4&hm=7b2b6018325a7d470328933bc51df500e1fc2bfae7cb8d3f12a3245a9bbb0d92&', 'video')">
+                <video muted loop playsinline autoplay>
+                    <source src="https://cdn.discordapp.com/attachments/1357551133358559372/1490371522454487213/VN_.mp4?ex=69d3d024&is=69d27ea4&hm=7b2b6018325a7d470328933bc51df500e1fc2bfae7cb8d3f12a3245a9bbb0d92&" type="video/mp4">
+                </video>
+                <div class="design-info"><span class="design-title">تصميم بشارة المواليد</span></div>
+            </div>
+            <div class="design-card" onclick="zoomMedia('https://cdn.discordapp.com/attachments/1357551133358559372/1490374076303278091/AhaTok_to.8338_c972834c-b68a-4691-8851-a077f8620514_.mp4?ex=69d3d285&is=69d28105&hm=06baa8ef920e336302e86c5851dd4dceefbc8c3e96f47856e6f1a114fe95f00b&', 'video')">
+                <video muted loop playsinline autoplay>
+                    <source src="https://cdn.discordapp.com/attachments/1357551133358559372/1490374076303278091/AhaTok_to.8338_c972834c-b68a-4691-8851-a077f8620514_.mp4?ex=69d3d285&is=69d28105&hm=06baa8ef920e336302e86c5851dd4dceefbc8c3e96f47856e6f1a114fe95f00b&" type="video/mp4">
+                </video>
+                <div class="design-info"><span class="design-title">تصميم بشارة المواليد</span></div>
+            </div>
+            <div class="design-card" onclick="zoomMedia('https://cdn.discordapp.com/attachments/1357551133358559372/1490375307239100669/AhaTok_to.8338_8733d216-6ad8-4ed2-bc9d-3f9a22a1b410_.mp4?ex=69d3d3ab&is=69d2822b&hm=827bc1ca24735a45eeaae0f5ec3eea0ef2ce92f8a63aef53bde97355bb247756&', 'video')">
+                <video muted loop playsinline autoplay>
+                    <source src="https://cdn.discordapp.com/attachments/1357551133358559372/1490375307239100669/AhaTok_to.8338_8733d216-6ad8-4ed2-bc9d-3f9a22a1b410_.mp4?ex=69d3d3ab&is=69d2822b&hm=827bc1ca24735a45eeaae0f5ec3eea0ef2ce92f8a63aef53bde97355bb247756&" type="video/mp4">
+                </video>
+                <div class="design-info"><span class="design-title">تصميم عقد القرآن</span></div>
+            </div>
+            <div class="design-card" onclick="zoomMedia('https://cdn.discordapp.com/attachments/1357551133358559372/1490376249061933199/AhaTok_to.8338_624e7bd5-968a-40d3-9a3d-50e5962e6e08_.mp4?ex=69d3d48b&is=69d2830b&hm=ee418ab22681a67ce0975de035cc4f8f709c2719451605fe2e3063bf1daa68e9&', 'video')">
+                <video muted loop playsinline autoplay>
+                    <source src="https://cdn.discordapp.com/attachments/1357551133358559372/1490376249061933199/AhaTok_to.8338_624e7bd5-968a-40d3-9a3d-50e5962e6e08_.mp4?ex=69d3d48b&is=69d2830b&hm=ee418ab22681a67ce0975de035cc4f8f709c2719451605fe2e3063bf1daa68e9&" type="video/mp4">
+                </video>
+                <div class="design-info"><span class="design-title">تصميم عقد القرآن</span></div>
+            </div>
+            <div class="design-card" onclick="zoomMedia('https://cdn.discordapp.com/attachments/1357551133358559372/1490377020381593741/AhaTok_to.8338_27cd9eb3-c33f-4ad2-9ed3-4517ef2b76d5_.mp4?ex=69d3d543&is=69d283c3&hm=7661d7e47bd2c7bd77bf89b6d3cb5de3de964766642ac244da47af504390c9bf&', 'video')">
+                <video muted loop playsinline autoplay>
+                    <source src="https://cdn.discordapp.com/attachments/1357551133358559372/1490377020381593741/AhaTok_to.8338_27cd9eb3-c33f-4ad2-9ed3-4517ef2b76d5_.mp4?ex=69d3d543&is=69d283c3&hm=7661d7e47bd2c7bd77bf89b6d3cb5de3de964766642ac244da47af504390c9bf&" type="video/mp4">
+                </video>
+                <div class="design-info"><span class="design-title">تصميم عقد القرآن</span></div>
             </div>
         </div>
 
@@ -193,7 +220,7 @@
     </div>
 
     <div id="groupPage" class="designs-section">
-        <button class="back-btn" onclick="hideGroup()">← العودة للمعرض</button>
+        <button class="back-btn" onclick="hideGroup()">← اَلْعَوْدَةُ لِلْمَعْرِضِ</button>
         <div class="designs-header">
             <h1 id="groupTitle">اسم القسم</h1>
         </div>
@@ -207,12 +234,11 @@
 
     <script>
         const data = {
-            'بجايم': { type: 'img', items: ['https://i.postimg.cc/WzJWh6v9/3487897b-4d79-4e19-9ecc-699e36acf854.jpg', 'https://i.postimg.cc/85dd3KTV/1a864f55-4c58-4056-a652-5db07cc2fa4e.jpg'] },
-            'عائلي': { type: 'img', items: ['https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg', 'https://i.postimg.cc/pXJ78Cjn/8589a603-a5d9-41c5-93f2-fa1dad7a4a14.jpg'] },
-            'شخصين': { type: 'img', items: ['https://i.postimg.cc/4dJ0dhLZ/a805f4ed-585a-4e34-a150-d2d41f133759.jpg', 'https://i.postimg.cc/kGB48G1W/837a31e0-e688-4596-9cee-64f100a86c86.jpg'] },
-            'دعوات': { type: 'img', items: ['https://i.postimg.cc/vH2rp6wT/528f85b4-f291-426e-8513-a13f2c26efbb.jpg', 'https://i.postimg.cc/85GMhRMr/131f4e4d-61cb-4102-b7a2-856b8089bec1.jpg'] },
-            'فساتين': { type: 'img', items: ['https://i.postimg.cc/mr0QpxMg/1292e9c0-1a2b-4b72-81fc-4d38ffda675b.jpg'] },
-            'دعوات_فيديو': { type: 'video', items: ['رابط_فيديو_1.mp4', 'رابط_فيديو_2.mp4'] }
+            'بَجَايِمُ': { type: 'img', items: ['https://i.postimg.cc/sDzD93n8/Picsart-26-04-05-11-17-55-276.jpg', 'https://i.postimg.cc/WzJWh6v9/3487897b-4d79-4e19-9ecc-699e36acf854.jpg', 'https://i.postimg.cc/85dd3KTV/1a864f55-4c58-4056-a652-5db07cc2fa4e.jpg', 'https://i.postimg.cc/65VqD82X/IMG-20260405-WA0028.jpg', 'https://i.postimg.cc/SxTShCyx/Picsart-26-04-05-11-17-32-951.jpg', 'https://i.postimg.cc/vB9bfK5r/Picsart-26-04-05-11-19-36-843.jpg'] },
+            'عَائِلِيٌّ': { type: 'img', items: ['https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg', 'https://i.postimg.cc/pXJ78Cjn/8589a603-a5d9-41c5-93f2-fa1dad7a4a14.jpg', 'https://i.postimg.cc/Y9ZjwVwn/Picsart-26-04-05-11-52-43-335.jpg', 'https://i.postimg.cc/VLjv3DZB/Picsart-26-04-05-11-53-30-376.png', 'https://i.postimg.cc/KYYY3FGN/Picsart-26-04-05-11-53-51-013.jpg', 'https://i.postimg.cc/hvV4Rtsq/Picsart-26-04-05-11-54-05-814.jpg'] },
+            'شَخْصَيْنِ': { type: 'img', items: ['https://i.postimg.cc/m2QqCHk0/Picsart-26-04-05-12-11-27-972.jpg', 'https://i.postimg.cc/7LQQw1tG/Picsart-26-04-05-12-11-40-561.jpg', 'https://i.postimg.cc/MTCPj6Sz/Picsart-26-04-05-12-11-53-142.jpg', 'https://i.postimg.cc/m2GpLgVs/Picsart-26-04-05-12-12-17-294.jpg', 'https://i.postimg.cc/x1663yQC/Picsart-26-04-05-12-12-31-214.jpg', 'https://i.postimg.cc/CKtJWhzw/Picsart-26-04-05-12-12-45-428.jpg', 'https://i.postimg.cc/RhxdZg7G/Picsart-26-04-05-12-12-59-130.jpg', 'https://i.postimg.cc/bN8LXFNJ/Picsart-26-04-05-12-13-25-426.jpg', 'https://i.postimg.cc/wjjVMymn/Picsart-26-04-05-12-13-48-509.jpg', 'https://i.postimg.cc/SsCL3cBk/Picsart-26-04-05-12-14-03-511.jpg', 'https://i.postimg.cc/Kj5PvxvF/IMG-20260405-WA0029.jpg', 'https://i.postimg.cc/5Nx5KYnH/IMG-20260405-WA0030.jpg', 'https://i.postimg.cc/9FJd6mns/IMG-20260405-WA0031.jpg'] },
+            'دَعَوَاتٌ': { type: 'img', items: ['https://i.postimg.cc/4NL8zQZj/Picsart-26-04-05-12-36-58-295.jpg', 'https://i.postimg.cc/vH2rp6wT/528f85b4-f291-426e-8513-a13f2c26efbb.jpg', 'https://i.postimg.cc/85GMhRMr/131f4e4d-61cb-4102-b7a2-856b8089bec1.jpg', 'https://i.postimg.cc/nz4RB8hb/Picsart-26-04-05-12-36-32-847.jpg', 'https://i.postimg.cc/CM4rKV2p/Picsart-26-04-05-12-36-46-113.jpg', 'https://i.postimg.cc/DwSx54ws/IMG-20260405-WA0032.jpg'] },
+            'فَسَاتِينُ': { type: 'img', items: ['https://i.postimg.cc/Wz9Ft7CX/IMG-20260405-WA0034.jpg', 'https://i.postimg.cc/KzDghb5V/Picsart-26-04-05-14-15-26-548.jpg', 'https://i.postimg.cc/TYYnGKFz/Picsart-26-04-05-14-12-03-189.jpg', 'https://i.postimg.cc/QxxcsFwp/Picsart-26-04-05-14-12-29-322.jpg', 'https://i.postimg.cc/NFN9LxSb/IMG-20260405-WA0033.jpg', 'https://i.postimg.cc/T1kLhcFN/IMG-20260405-WA0035.jpg', 'https://i.postimg.cc/90xRzBKk/IMG-20260405-WA0036.jpg', 'https://i.postimg.cc/Qt3WzCcP/Picsart-26-04-05-14-12-46-913.jpg', 'https://i.postimg.cc/ydHSGx0t/Picsart-26-04-05-14-13-21-385.jpg', 'https://i.postimg.cc/Y9HmP0Qy/Picsart-26-04-05-14-13-43-974.jpg', 'https://i.postimg.cc/FRVJXvxW/Picsart-26-04-05-14-14-15-905.png', 'https://i.postimg.cc/LXpZW5zd/Picsart-26-04-05-14-14-38-236.jpg', 'https://i.postimg.cc/4dQhRG5k/Picsart-26-04-05-14-14-50-988.png', 'https://i.postimg.cc/XJky6Wgz/Picsart-26-04-05-14-15-10-251.jpg', 'https://i.postimg.cc/Y02LpPnq/Picsart-26-04-05-14-15-38-831.png', 'https://i.postimg.cc/x8jN0ZxC/Picsart-26-04-05-14-15-56-441.png', 'https://i.postimg.cc/j2qns1gt/Picsart-26-04-05-14-16-13-833.jpg', 'https://i.postimg.cc/yx63VGQD/Picsart-26-04-05-14-16-25-582.png', 'https://i.postimg.cc/6q649Pj7/Picsart-26-04-05-14-17-08-851.jpg', 'https://i.postimg.cc/Wzpq2yWk/Picsart-26-04-05-14-17-21-335.jpg', 'https://i.postimg.cc/j2qns1gz/Picsart-26-04-05-14-17-47-075.jpg', 'https://i.postimg.cc/6qH2ThgR/Picsart-26-04-05-14-18-04-272.jpg', 'https://i.postimg.cc/8ckf1YKB/Picsart-26-04-05-14-19-06-193.jpg', 'https://i.postimg.cc/T1kLhcF9/Picsart-26-04-05-14-19-19-474.jpg', 'https://i.postimg.cc/mkdzhSJy/Picsart-26-04-05-14-19-36-150.jpg', 'https://i.postimg.cc/3NL4WZVt/Picsart-26-04-05-14-20-00-469.jpg'] }
         };
 
         function showGroup(category) {
