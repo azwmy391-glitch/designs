@@ -79,7 +79,6 @@
             font-size: 0.9rem;
         }
 
-        /* تنسيق الصفحة الداخلية للمجموعة */
         #groupPage {
             display: none;
             width: 100%;
@@ -107,17 +106,30 @@
             inset: 0;
             background: rgba(0, 0, 0, 0.9);
             display: none;
-            justify-content: center;
-            align-items: center;
+            /* تم تعديل التنسيق هنا لضمان التوسط في النص */
+            justify-content: center; 
+            align-items: center; 
             z-index: 3000;
             cursor: zoom-out;
             backdrop-filter: blur(8px);
+        }
+
+        #mediaContainer {
+            /* تعديل لضمان توسط المحتوى عمودياً وأفقياً */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
         }
 
         .image-viewer-overlay img, .image-viewer-overlay video {
             max-width: 90%;
             max-height: 90%;
             border-radius: 15px;
+            /* التأكد من عدم وجود هوامش خارجية قد تزيح المحتوى */
+            margin: auto; 
+            display: block;
         }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -153,9 +165,9 @@
                 <img src="https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg">
                 <div class="design-info"><span class="design-title">رسم عائلي</span></div>
             </div>
-            <div class="design-card" onclick="showGroup('زوجين')">
+            <div class="design-card" onclick="showGroup('شخصين')">
                 <img src="https://i.postimg.cc/4dJ0dhLZ/a805f4ed-585a-4e34-a150-d2d41f133759.jpg">
-                <div class="design-info"><span class="design-title">رسم زوجين</span></div>
+                <div class="design-info"><span class="design-title">رسم شخصين</span></div>
             </div>
             <div class="design-card" onclick="showGroup('دعوات')">
                 <img src="https://i.postimg.cc/vH2rp6wT/528f85b4-f291-426e-8513-a13f2c26efbb.jpg">
@@ -197,7 +209,7 @@
         const data = {
             'بجايم': { type: 'img', items: ['https://i.postimg.cc/WzJWh6v9/3487897b-4d79-4e19-9ecc-699e36acf854.jpg', 'https://i.postimg.cc/85dd3KTV/1a864f55-4c58-4056-a652-5db07cc2fa4e.jpg'] },
             'عائلي': { type: 'img', items: ['https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg', 'https://i.postimg.cc/pXJ78Cjn/8589a603-a5d9-41c5-93f2-fa1dad7a4a14.jpg'] },
-            'زوجين': { type: 'img', items: ['https://i.postimg.cc/4dJ0dhLZ/a805f4ed-585a-4e34-a150-d2d41f133759.jpg', 'https://i.postimg.cc/kGB48G1W/837a31e0-e688-4596-9cee-64f100a86c86.jpg'] },
+            'شخصين': { type: 'img', items: ['https://i.postimg.cc/4dJ0dhLZ/a805f4ed-585a-4e34-a150-d2d41f133759.jpg', 'https://i.postimg.cc/kGB48G1W/837a31e0-e688-4596-9cee-64f100a86c86.jpg'] },
             'دعوات': { type: 'img', items: ['https://i.postimg.cc/vH2rp6wT/528f85b4-f291-426e-8513-a13f2c26efbb.jpg', 'https://i.postimg.cc/85GMhRMr/131f4e4d-61cb-4102-b7a2-856b8089bec1.jpg'] },
             'فساتين': { type: 'img', items: ['https://i.postimg.cc/mr0QpxMg/1292e9c0-1a2b-4b72-81fc-4d38ffda675b.jpg'] },
             'دعوات_فيديو': { type: 'video', items: ['رابط_فيديو_1.mp4', 'رابط_فيديو_2.mp4'] }
