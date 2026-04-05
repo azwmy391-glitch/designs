@@ -9,7 +9,7 @@
     <style>
         .designs-section {
             padding: 60px 20px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
@@ -31,8 +31,8 @@
 
         .designs-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
             width: 100%;
             animation: fadeInUp 1s ease-out 0.3s both;
         }
@@ -46,6 +46,8 @@
             transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             cursor: zoom-in;
+            display: flex;
+            flex-direction: column;
         }
 
         .design-card:hover {
@@ -59,6 +61,7 @@
             height: auto;
             display: block;
             transition: 0.5s;
+            object-fit: cover;
         }
 
         .design-card:hover img {
@@ -70,12 +73,13 @@
             text-align: center;
             background: var(--white);
             border-top: 1px solid var(--bg-color);
+            margin-top: auto; 
         }
 
         .design-title {
             font-weight: 700;
             color: var(--primary-brown);
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
         .back-home-link {
@@ -102,7 +106,7 @@
 
         .image-viewer-overlay img {
             max-width: 90%;
-            max-height: 85%;
+            max-height: 90%;
             border-radius: 15px;
             box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
             animation: zoomInImage 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -133,34 +137,33 @@
     <div class="designs-section">
         <div class="designs-header">
             <h1>مَعْرِضُ أَعْمَالِي</h1>
-            <p>هُنَا تَجْتَمِعُ اللَّمَسَاتُ الْفَنِّيَّةُ لِتُشَكِّلَ وَاقِعًا بَصَرِيًّا فَرِيدًا.</p>
+            <p>هُنَا تَجْتَمِعُ اللَّمَسَاتُ الْفَنِّيَّةُ لِتُشَكِّلَ وَاقِعًا بَصَرِيًّا فَرِيدًا.</p>
         </div>
 
         <div class="designs-container">
             <div class="design-card" onclick="showImage(this)">
-                <img src="https://i.postimg.cc/YqJWMj1Q/56129382-7f6b-4419-9c87-10ee0a95019e.jpg">
+                <img src="https://i.postimg.cc/cHHK0FSL/41712b2b-2768-4c97-990d-1329bb598903.jpg">
                 <div class="design-info">
-                    <span class="design-title">تصميم كشخة العيد</span>
+                    <span class="design-title">تصميم كشخة المناسبات</span>
                 </div>
             </div>
 
             <div class="design-card" onclick="showImage(this)">
-                <img src="https://via.placeholder.com/400x500">
+                <img src="https://i.postimg.cc/Bn0B4fwD/8cd1ebfe-5f63-4b4a-8952-c1e8792c8ee6.jpg">
                 <div class="design-info">
-                    <span class="design-title">تصميم هوية بصرية</span>
+                    <span class="design-title">رسم عائلي للمناسبات</span>
                 </div>
             </div>
 
             <div class="design-card" onclick="showImage(this)">
-                <img src="https://via.placeholder.com/400x500">
+                <img src="https://i.postimg.cc/k5CK3NGW/d37eb12e-379a-4a30-8878-3091a6c0f2e3.jpg">
                 <div class="design-info">
-                    <span class="design-title">تصميم منشورات</span>
+                    <span class="design-title">تصميم عائلي</span>
                 </div>
             </div>
-
         </div>
 
-        <a href="index.html" class="back-home-link">اَلْعَوْدَةُ لِلرَّئِيسِيَّةِ</a>
+        <a href="index.html" class="back-home-link">اَلْعَوْدَةُ لِلرَّئِيسِيَّةِ</a>
     </div>
 
     <div class="image-viewer-overlay" id="imgViewer" onclick="closeImage()">
