@@ -3,63 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر لمسة للتصاميم</title>
+    <title>متجر لمسة — تصاميم صور وفيديو فاخرة للمناسبات</title>
+    <meta name="description" content="متجر لمسة — تصاميم صور وفيديو مخصصة: رسومات شخصية وعائلية، فساتين، دعوات، بشارات مواليد وعقد قرآن.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">مَتْجَرُ <span>لَمْسَةٍ</span></div>
+    <!-- ======== شريط التنقل ======== -->
+    <nav class="navbar" aria-label="التنقل الرئيسي">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo" data-testid="nav-logo">
+                مَتْجَرُ <span>لَمْسَةٍ</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active" data-testid="nav-home">الرئيسية</a></li>
+                <li><a href="designs.html" data-testid="nav-designs">معرض التصاميم</a></li>
+                <li><a href="prices.html" data-testid="nav-prices">الأسعار</a></li>
+                <li><a href="order.html" data-testid="nav-order">طلب تصميم</a></li>
+            </ul>
+            <a href="order.html" class="btn btn-primary btn-sm nav-cta" data-testid="nav-cta">
+                اطلب تصميمك
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+            </a>
+            <button class="nav-toggle" aria-label="فتح القائمة" aria-expanded="false" aria-controls="mobileMenu" data-testid="nav-toggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </nav>
 
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="active" data-testid="mobile-nav-home">الرئيسية</a>
+        <a href="designs.html" data-testid="mobile-nav-designs">معرض التصاميم</a>
+        <a href="prices.html" data-testid="mobile-nav-prices">الأسعار</a>
+        <a href="order.html" data-testid="mobile-nav-order">طلب تصميم</a>
+        <a href="order.html" class="btn btn-primary" data-testid="mobile-nav-cta">اطلب تصميمك الخاص</a>
+    </div>
+
+    <!-- ======== Hero ======== -->
     <header class="hero">
-        <div class="hero-content">
-            <h1><span class="highlight">حَوِّلْ أَفْكَارَكَ إِلَىٰ</span></h1>
-            <h1><span class="highlight">وَاقِعٍ بَصَرِيٍّ</span></h1>
-            <p>نُصَمِّمُ لَكَ الْمُسْتَقْبَلَ بِأَلْوَانِ الْإِبْدَاعِ وَأَعْلَىٰ مَعَايِيرِ الْجَوْدَةِ الرَّقْمِيَّةِ.</p>
-            
-            <div class="hero-btns-container">
-                <div class="btns-row">
-                    <button class="btn-primary" onclick="window.location.href='designs.html'">تصفح التصاميم</button>
-                    <button class="btn-primary" onclick="window.location.href='prices.html'">قائمة الأسعار</button>
+        <div class="halo halo-rose"></div>
+        <div class="halo halo-gold"></div>
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <span class="hero-badge reveal">تصاميم مخصصة للمناسبات واللحظات المميزة</span>
+                <h1 class="reveal" style="--reveal-delay:.1s">
+                    حوّل أفكارك إلى<br><span class="accent">واقعٍ بصريّ</span> يُبهر
+                </h1>
+                <p class="hero-sub reveal" style="--reveal-delay:.2s">
+                    في متجر لمسة نصمم لكِ رسوماتٍ ودعواتٍ وبشاراتٍ بأعلى معايير الجودة الرقمية،
+                    بلمسة فنية دافئة تليق بمناسباتك.
+                </p>
+                <div class="hero-actions reveal" style="--reveal-delay:.3s">
+                    <a href="designs.html" class="btn btn-primary" data-testid="hero-explore-btn">
+                        استكشفي المعرض
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                    </a>
+                    <a href="order.html" class="btn btn-outline" data-testid="hero-order-btn">اطلبي تصميمك الخاص</a>
                 </div>
-                <div class="btns-single">
-                    <button class="btn-outline" onclick="window.location.href='order.html'">اطلب تصميمك الخاص</button>
+                <div class="hero-note reveal" style="--reveal-delay:.4s">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.6-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12C19 16.4 12 21 12 21z"/></svg>
+                    كل تصميم يُصنع خصيصًا لكِ — لا قوالب جاهزة.
+                </div>
+            </div>
+
+            <div class="hero-collage reveal" style="--reveal-delay:.25s">
+                <div class="collage-frame" aria-hidden="true"></div>
+                <div class="collage-item collage-main">
+                    <img src="https://i.postimg.cc/Wz9Ft7CX/IMG-20260405-WA0034.jpg" alt="رسم فستان من أعمال متجر لمسة" fetchpriority="high" decoding="async">
+                </div>
+                <div class="collage-item collage-top float-soft">
+                    <img src="https://i.postimg.cc/m2QqCHk0/Picsart-26-04-05-12-11-27-972.jpg" alt="رسم شخصين من أعمال متجر لمسة" loading="lazy" decoding="async">
+                </div>
+                <div class="collage-item collage-bottom">
+                    <img src="https://i.postimg.cc/4NL8zQZj/Picsart-26-04-05-12-36-58-295.jpg" alt="تصميم دعوة من أعمال متجر لمسة" loading="lazy" decoding="async">
+                </div>
+                <div class="collage-tag">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3 8 8l-5 1.5L8 11l1.5 5L11 11l5-1.5L11 8z"/><path d="M19 14.5 18.2 17l-2.5.8 2.5.8.8 2.5.8-2.5 2.5-.8-2.5-.8z"/></svg>
+                    لمسة فنية لكل مناسبة
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="wants-website" onclick="openPopup()">
-        هل تريد موقعاً أنت أيضاً؟
-    </div>
+    <!-- ======== التعريف بالمتجر ======== -->
+    <section class="section" aria-labelledby="about-title">
+        <div class="container about-grid">
+            <div class="about-media reveal">
+                <div class="frame-offset" aria-hidden="true"></div>
+                <img src="https://i.postimg.cc/Njj75kBF/e66c54c3-9a23-4281-816d-66e73b09ff33.jpg" alt="رسم عائلي من أعمال متجر لمسة" loading="lazy" decoding="async">
+            </div>
+            <div>
+                <span class="kicker reveal">عن متجر لمسة</span>
+                <h2 class="section-title reveal" style="--reveal-delay:.1s" id="about-title">حيث تتحول اللحظات إلى ذكريات مرسومة</h2>
+                <p class="section-lead reveal" style="--reveal-delay:.2s">
+                    لمسة استوديو تصميم متخصص في الصور والفيديو: رسومات شخصية وثنائية وعائلية،
+                    تصاميم فساتين وملابس، دعوات مناسبات، وبشارات مواليد وعقد قرآن.
+                    نهتم بأدق التفاصيل لنقدم لكِ عملًا فنيًا يليق بلحظاتك.
+                </p>
+                <div class="about-stats reveal" style="--reveal-delay:.3s">
+                    <div class="about-stat">
+                        <strong>+60</strong>
+                        <span>عملاً فنيًا في المعرض</span>
+                    </div>
+                    <div class="about-stat">
+                        <strong>5</strong>
+                        <span>تصنيفات للرسومات</span>
+                    </div>
+                    <div class="about-stat">
+                        <strong>2</strong>
+                        <span>أقسام للفيديو</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="popup-overlay" id="webPopup">
+    <!-- ======== أعمال مختارة ======== -->
+    <section class="section section-tinted" aria-labelledby="featured-title">
+        <div class="container">
+            <div class="section-head">
+                <span class="kicker reveal">معرض مختار</span>
+                <h2 class="section-title reveal" style="--reveal-delay:.1s" id="featured-title">من أعمالنا الأخيرة</h2>
+                <p class="section-lead reveal" style="--reveal-delay:.2s">مختارات حقيقية من تصاميم المتجر — تصفحي المعرض الكامل لمشاهدة جميع الأعمال.</p>
+            </div>
+
+            <div class="featured-grid">
+                <a href="designs.html" class="work-card featured-a reveal" data-testid="featured-work-1">
+                    <img src="https://i.postimg.cc/sDzD93n8/Picsart-26-04-05-11-17-55-276.jpg" alt="رسم بجايم" loading="lazy" decoding="async">
+                    <div class="work-overlay">
+                        <span class="work-cat">رسومات</span>
+                        <span class="work-name">رسم بجايم</span>
+                    </div>
+                </a>
+                <a href="designs.html" class="work-card featured-b reveal" style="--reveal-delay:.08s" data-testid="featured-work-2">
+                    <img src="https://i.postimg.cc/7LQQw1tG/Picsart-26-04-05-12-11-40-561.jpg" alt="رسم شخصين" loading="lazy" decoding="async">
+                    <div class="work-overlay">
+                        <span class="work-cat">رسومات</span>
+                        <span class="work-name">رسم شخصين</span>
+                    </div>
+                </a>
+                <a href="designs.html" class="work-card reveal" style="--reveal-delay:.16s" data-testid="featured-work-3">
+                    <img src="https://i.postimg.cc/pXJ78Cjn/8589a603-a5d9-41c5-93f2-fa1dad7a4a14.jpg" alt="رسم عائلي" loading="lazy" decoding="async">
+                    <div class="work-overlay">
+                        <span class="work-cat">رسومات</span>
+                        <span class="work-name">رسم عائلي</span>
+                    </div>
+                </a>
+                <a href="designs.html" class="work-card reveal" style="--reveal-delay:.24s" data-testid="featured-work-4">
+                    <img src="https://i.postimg.cc/nz4RB8hb/Picsart-26-04-05-12-36-32-847.jpg" alt="رسم دعوات" loading="lazy" decoding="async">
+                    <div class="work-overlay">
+                        <span class="work-cat">مناسبات</span>
+                        <span class="work-name">رسم دعوات</span>
+                    </div>
+                </a>
+                <a href="designs.html" class="work-card featured-b reveal" style="--reveal-delay:.12s" data-testid="featured-work-5">
+                    <img src="https://i.postimg.cc/KzDghb5V/Picsart-26-04-05-14-15-26-548.jpg" alt="رسم فساتين" loading="lazy" decoding="async">
+                    <div class="work-overlay">
+                        <span class="work-cat">أزياء</span>
+                        <span class="work-name">رسم فساتين</span>
+                    </div>
+                </a>
+                <a href="designs.html" class="work-card reveal" style="--reveal-delay:.2s" data-testid="featured-work-6">
+                    <img src="https://i.postimg.cc/WzJWh6v9/3487897b-4d79-4e19-9ecc-699e36acf854.jpg" alt="رسم بجايم" loading="lazy" decoding="async">
+                    <div class="work-overlay">
+                        <span class="work-cat">رسومات</span>
+                        <span class="work-name">رسم بجايم</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="featured-more reveal">
+                <a href="designs.html" class="btn btn-gold" data-testid="featured-more-btn">
+                    المعرض الكامل
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== الخدمات ======== -->
+    <section class="section" aria-labelledby="services-title">
+        <div class="container">
+            <div class="section-head">
+                <span class="kicker reveal">خدماتنا</span>
+                <h2 class="section-title reveal" style="--reveal-delay:.1s" id="services-title">ماذا نصمم لكِ؟</h2>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card reveal" data-testid="service-card-images">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                    </div>
+                    <h3>تصميم الصور</h3>
+                    <p>تصاميم صور مخصصة بلمسة فنية دافئة تناسب ذوقك ومناسبتك.</p>
+                </div>
+
+                <div class="service-card reveal" style="--reveal-delay:.08s" data-testid="service-card-videos">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="3"/><path d="m16 10 6-3v10l-6-3"/></svg>
+                    </div>
+                    <h3>تصميم الفيديو</h3>
+                    <p>مقاطع فيديو مصممة بعناية لتوثيق لحظاتك بطريقة مميزة.</p>
+                </div>
+
+                <div class="service-card reveal" style="--reveal-delay:.16s" data-testid="service-card-portraits">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M3.5 20c.7-3.4 2.9-5 5.5-5s4.8 1.6 5.5 5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.7 14.6c2.6.3 4.3 1.9 4.8 4.4"/></svg>
+                    </div>
+                    <h3>الرسومات الشخصية والعائلية</h3>
+                    <p>رسومات شخصية وثنائية وعائلية تحفظ ملامح من تحبين.</p>
+                </div>
+
+                <div class="service-card reveal" data-testid="service-card-dresses">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3 7 7l2.5 2L8 14l-2 7h12l-2-7-1.5-5L17 7l-2-4-3 2.5z"/></svg>
+                    </div>
+                    <h3>تصاميم الفساتين والملابس</h3>
+                    <p>رسومات فساتين وملابس بأسلوب راقٍ يبرز جمال التصميم.</p>
+                </div>
+
+                <div class="service-card reveal" style="--reveal-delay:.08s" data-testid="service-card-invites">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+                    </div>
+                    <h3>الدعوات وتصاميم المناسبات</h3>
+                    <p>دعوات أنيقة لمناسباتك السعيدة، مصممة خصيصًا لكِ.</p>
+                </div>
+
+                <div class="service-card reveal" style="--reveal-delay:.16s" data-testid="service-card-baby">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3"/><path d="M5 7c2-1.5 4.5-2 7-2s5 .5 7 2c-1 6-3.5 12-7 14-3.5-2-6-8-7-14z"/><path d="M9 11h.01M15 11h.01"/><path d="M9.5 14.5c1.5 1.2 3.5 1.2 5 0"/></svg>
+                    </div>
+                    <h3>بشارات المواليد وعقد القرآن</h3>
+                    <p>فيديوهات بشارة وعقد قرآن بلمسات راقية تفرّح القلوب.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== الأسعار المختصرة ======== -->
+    <section class="section" aria-labelledby="pricing-title">
+        <div class="container">
+            <div class="price-teaser reveal">
+                <div>
+                    <span class="kicker">الأسعار</span>
+                    <h2 class="section-title" id="pricing-title">أسعار واضحة بلا مفاجآت</h2>
+                    <p class="section-lead">
+                        باقات بسيطة ومناسبة لكل طلب — والدفع عبر التحويل البنكي.
+                        تصفحي القائمة الكاملة لمعرفة جميع التفاصيل.
+                    </p>
+                    <div style="margin-top:1.8rem">
+                        <a href="prices.html" class="btn btn-outline" data-testid="pricing-teaser-btn">قائمة الأسعار الكاملة</a>
+                    </div>
+                </div>
+                <ul class="teaser-list">
+                    <li><span class="t-name">تصميم صورة</span><span class="t-dots"></span><span class="t-price">5﷼</span></li>
+                    <li><span class="t-name">تصميم الفيديو</span><span class="t-dots"></span><span class="t-price">10﷼</span></li>
+                    <li><span class="t-name">تصميم فيديو مع الصورة</span><span class="t-dots"></span><span class="t-price">15﷼</span></li>
+                    <li><span class="t-name">رسم عرسان</span><span class="t-dots"></span><span class="t-price">20﷼</span></li>
+                    <li><span class="t-name">تصميم رسالة العمر</span><span class="t-dots"></span><span class="t-price">حسب الطلب</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== دعوة الطلب ======== -->
+    <section class="section cta-section" aria-labelledby="cta-title">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2 id="cta-title">جاهزة لتحويل فكرتك إلى <em>تصميم يليق بها؟</em></h2>
+                <p>راسلينا الآن عبر واتساب وأخبرينا بفكرتك — وسنحولها معًا إلى عمل فني مميز.</p>
+                <a href="order.html" class="btn btn-gold" data-testid="cta-order-btn">
+                    ابدئي طلبك الآن
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== التذييل ======== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo">مَتْجَرُ <span>لَمْسَةٍ</span></a>
+                    <p class="footer-desc">استوديو تصميم صور وفيديو — رسومات ودعوات وبشارات مصنوعة بحب لمناسباتك المميزة.</p>
+                </div>
+                <div>
+                    <h4>الصفحات</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html" data-testid="footer-home">الرئيسية</a></li>
+                        <li><a href="designs.html" data-testid="footer-designs">معرض التصاميم</a></li>
+                        <li><a href="prices.html" data-testid="footer-prices">الأسعار</a></li>
+                        <li><a href="order.html" data-testid="footer-order">طلب تصميم</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>تواصلي معنا</h4>
+                    <div class="footer-contact">
+                        <a href="https://wa.me/966576968338" target="_blank" rel="noopener" data-testid="footer-whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                            اطلبي تصميمك عبر واتساب
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">متجر لمسة — جميع الحقوق محفوظة</div>
+        </div>
+    </footer>
+
+    <!-- ======== زر ونافذة طلب تصميم المواقع ======== -->
+    <button class="wants-website" data-testid="website-popup-trigger" aria-haspopup="dialog">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+        هل تريد موقعاً أنت أيضاً؟
+    </button>
+
+    <div class="popup-overlay" id="webPopup" role="dialog" aria-modal="true" aria-labelledby="webPopupTitle">
         <div class="popup-content">
-            <span class="close-popup" onclick="closePopup()">&times;</span>
-            <h3 style="margin-top: 0;">نصمم لك عالمك الخاص</h3>
+            <button class="close-popup" aria-label="إغلاق النافذة" data-testid="website-popup-close">&times;</button>
+            <h3 id="webPopupTitle">نصمم لك عالمك الخاص</h3>
             <p>يمكنك طلب موقع بالشكل الذي تريده، بتصاميم جذابة تناسب مشروعك!</p>
-            <a href="https://wa.me/966578550197" target="_blank" class="btn-order-web">اطلب الآن عبر واتساب</a>
+            <a href="https://wa.me/966578550197" target="_blank" rel="noopener" class="btn btn-whatsapp" data-testid="website-popup-whatsapp">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                اطلب الآن عبر واتساب
+            </a>
         </div>
     </div>
 
-    <script>
-        function openPopup() {
-            document.getElementById('webPopup').style.display = 'flex';
-        }
-
-        function closePopup() {
-            document.getElementById('webPopup').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const popup = document.getElementById('webPopup');
-            if (event.target == popup) {
-                closePopup();
-            }
-        }
-    </script>
-    
+    <script src="main.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4cd3be65dfe6489',t:'MTc5MjM4NjE4Mg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"7f7b0fd8732c4326aae4b9d58d5c514a","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
