@@ -1,8 +1,6 @@
-/* متجر لمسة — السلوكيات المشتركة */
 (function () {
     'use strict';
 
-    /* ---------- شريط التنقل ---------- */
     const navbar = document.querySelector('.navbar');
     if (navbar) {
         const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 12);
@@ -44,7 +42,6 @@
         });
     }
 
-    /* ---------- حركات الظهور أثناء التمرير ---------- */
     const revealEls = document.querySelectorAll('.reveal');
     if (revealEls.length && 'IntersectionObserver' in window) {
         const io = new IntersectionObserver((entries) => {
@@ -60,7 +57,6 @@
         revealEls.forEach(el => el.classList.add('is-visible'));
     }
 
-    /* ---------- بديل أنيق عند فشل تحميل الصور ---------- */
     window.lamsaImgFallback = function (img) {
         const fallback = document.createElement('div');
         fallback.className = 'img-fallback';
@@ -79,7 +75,6 @@
         }
     });
 
-    /* ---------- نافذة طلب تصميم المواقع (الرئيسية) ---------- */
     const popup = document.getElementById('webPopup');
     const popupTrigger = document.querySelector('.wants-website');
     let lastFocused = null;
